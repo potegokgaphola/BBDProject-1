@@ -1,4 +1,4 @@
-package billtracker.login;
+package billtracker.home;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -8,9 +8,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import java.awt.Font;
 
-public class Home extends JFrame {
+public class BillsGraph extends JFrame {
 
 	private JPanel contentPane;
 
@@ -21,7 +20,7 @@ public class Home extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Home frame = new Home();
+					BillsGraph frame = new BillsGraph();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,7 +32,7 @@ public class Home extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Home() {
+	public BillsGraph() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -41,10 +40,9 @@ public class Home extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("HOME");
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 17));
+		JLabel lblNewLabel = new JLabel("Graph");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(115, 91, 138, 39);
+		lblNewLabel.setBounds(97, 95, 150, 34);
 		contentPane.add(lblNewLabel);
 	}
 

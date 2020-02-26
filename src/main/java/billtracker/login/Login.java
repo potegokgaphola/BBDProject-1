@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import billtracker.home.Home;
+
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -132,7 +135,7 @@ public class Login extends JFrame {
 		register_btn.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
+				// Go to the register paged
 				Register register = new Register();
 				register.setVisible(true);
 				Login.this.dispose();
