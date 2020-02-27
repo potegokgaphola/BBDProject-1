@@ -167,7 +167,6 @@ public class Register extends JFrame {
 	 */
 	public boolean checkUser(String username) {
 		//check username in db
-		System.out.println("The user in question is: " + username);
 		boolean output = false;
 		
 		String query = "SELECT * FROM `users` WHERE `username`=?";
@@ -186,7 +185,6 @@ public class Register extends JFrame {
 			ex.printStackTrace();
 		}
 		
-		System.out.println("output from checkUser: "+output);
 		return output;
 	}
 	
@@ -202,7 +200,6 @@ public class Register extends JFrame {
 		boolean output = false;
 		String query_two = "INSERT INTO `users`(`username`, `firstname`, `lastname`, `password`) VALUES(?, ?, ?, ?)";
 		
-		System.out.println("at least we got here");
 		try {
 			PreparedStatement statement = My_CNX.getConnection().prepareStatement(query_two);
 			statement.setString(1, username);
@@ -213,7 +210,6 @@ public class Register extends JFrame {
 			int result_two = statement.executeUpdate();
 			if(result_two == 1) {
 				//success
-				System.out.println("added `username` to database");
 				output = true;
 			}
 		} catch (SQLException ex) {
@@ -221,7 +217,6 @@ public class Register extends JFrame {
 			ex.printStackTrace();
 		}
 		
-		System.out.println("output from insertUser: "+output);
 		return output;
 	}
 	
