@@ -1,6 +1,7 @@
 package billtracker.login;
 
-public class CurrentUser  {
+
+public class CurrentUser implements User {
 	private static int id;
 
 	public int getId() {

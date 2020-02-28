@@ -167,6 +167,8 @@ public class Login extends JFrame {
 			
 			if (rs.next()) {
 				
+				User user = new CurrentUser();
+				user.setId(Integer.parseInt( rs.getString("user_id")));
 				output = true;
 			} else {
 				//login error
