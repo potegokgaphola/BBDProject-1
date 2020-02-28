@@ -125,6 +125,7 @@ public class Login extends JFrame {
 		login_panel.add(password_field);
 		
 		error_lbl = new JLabel("");
+		error_lbl.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		error_lbl.setForeground(Color.RED);
 		error_lbl.setBounds(54, 126, 231, 14);
 		login_panel.add(error_lbl);
