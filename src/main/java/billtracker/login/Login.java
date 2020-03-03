@@ -58,35 +58,37 @@ public class Login extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.LIGHT_GRAY);
+		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JPanel login_panel = new JPanel();
 		login_panel.setBackground(Color.LIGHT_GRAY);
-		login_panel.setBounds(95, 57, 329, 193);
+		login_panel.setBounds(10, 57, 414, 156);
 		contentPane.add(login_panel);
 		login_panel.setLayout(null);
 		
 		JLabel user_icon = new JLabel("");
 		Image user_img = new ImageIcon(this.getClass().getResource("/user.png")).getImage();
 		user_icon.setIcon(new ImageIcon(user_img));
-		user_icon.setBounds(33, 40, 32, 32);
+		user_icon.setBounds(180, 11, 32, 32);
 		login_panel.add(user_icon);
 		
 		JLabel password_icon = new JLabel("");
 		Image password_img = new ImageIcon(this.getClass().getResource("/password.png")).getImage();
 		password_icon.setIcon(new ImageIcon(password_img));
-		password_icon.setBounds(33, 83, 32, 32);
+		password_icon.setBounds(180, 54, 32, 32);
 		login_panel.add(password_icon);
 		
 		username_field = new JTextField();
-		username_field.setBounds(123, 52, 162, 20);
+		username_field.setBounds(242, 23, 162, 20);
 		login_panel.add(username_field);
 		username_field.setColumns(10);
 		
 		JButton login_btn = new JButton("Login");
+		login_btn.setForeground(Color.WHITE);
+		login_btn.setBackground(Color.LIGHT_GRAY);
 		login_btn.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
@@ -106,11 +108,13 @@ public class Login extends JFrame {
 			}
 			
 		});
-		login_btn.setBounds(86, 145, 89, 23);
+		login_btn.setBounds(293, 117, 111, 23);
 		login_panel.add(login_btn);
 		
 		JButton register_btn = new JButton("Register");
-		register_btn.setBounds(196, 145, 89, 23);
+		register_btn.setBackground(Color.LIGHT_GRAY);
+		register_btn.setForeground(Color.WHITE);
+		register_btn.setBounds(173, 117, 111, 23);
 		register_btn.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
@@ -124,13 +128,13 @@ public class Login extends JFrame {
 		login_panel.add(register_btn);
 		
 		password_field = new JPasswordField();
-		password_field.setBounds(123, 95, 162, 20);
+		password_field.setBounds(242, 66, 162, 20);
 		login_panel.add(password_field);
-		
+		                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 		error_lbl = new JLabel("");
 		error_lbl.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		error_lbl.setForeground(Color.RED);
-		error_lbl.setBounds(54, 126, 231, 14);
+		error_lbl.setBounds(173, 92, 231, 14);
 		login_panel.add(error_lbl);
 		
 		JPanel heading_panel = new JPanel();
@@ -144,6 +148,11 @@ public class Login extends JFrame {
 		heading_lbl.setHorizontalAlignment(SwingConstants.CENTER);
 		heading_lbl.setBounds(73, 11, 201, 24);
 		heading_panel.add(heading_lbl);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(Color.LIGHT_GRAY);
+		panel.setBounds(10, 233, 414, 17);
+		contentPane.add(panel);
 		
 		
 	}
