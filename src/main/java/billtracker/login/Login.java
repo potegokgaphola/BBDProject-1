@@ -178,6 +178,7 @@ public class Login extends JFrame {
 				
 				User user = new CurrentUser();
 				user.setId(Integer.parseInt( rs.getString("user_id")));
+				user.setFirstname(rs.getString("firstname"));
 				output = true;
 			} else {
 				//login error

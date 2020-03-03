@@ -151,25 +151,31 @@ public class AddBill extends JFrame {
 		createBill_panel.add(submit_btn);
 		
 		JPanel rgroup_panel = new JPanel();
+		rgroup_panel.setBackground(Color.LIGHT_GRAY);
 		rgroup_panel.setBounds(85, 93, 282, 27);
 		createBill_panel.add(rgroup_panel);
 		rgroup_panel.setLayout(null);
 		
 		
 		water_rdbtn = new JRadioButton("water");
-		water_rdbtn.setForeground(Color.BLACK);
+		water_rdbtn.setBackground(Color.LIGHT_GRAY);
+		water_rdbtn.setForeground(Color.WHITE);
 		water_rdbtn.setFont(new Font("Tahoma", Font.ITALIC, 11));
 		water_rdbtn.setBounds(6, 7, 73, 16);
 		rgroup_panel.add(water_rdbtn);
 		bgroup.add(water_rdbtn);
 		
 		electricity_rdbtn = new JRadioButton("Electricity");
+		electricity_rdbtn.setBackground(Color.LIGHT_GRAY);
+		electricity_rdbtn.setForeground(Color.WHITE);
 		electricity_rdbtn.setFont(new Font("Tahoma", Font.ITALIC, 11));
 		electricity_rdbtn.setBounds(97, 7, 85, 16);
 		rgroup_panel.add(electricity_rdbtn);
 		bgroup.add(electricity_rdbtn);
 		
 		food_rdbtn = new JRadioButton("Food");
+		food_rdbtn.setForeground(Color.WHITE);
+		food_rdbtn.setBackground(Color.LIGHT_GRAY);
 		food_rdbtn.setFont(new Font("Tahoma", Font.ITALIC, 11));
 		food_rdbtn.setBounds(198, 7, 53, 16);
 		rgroup_panel.add(food_rdbtn);
@@ -246,7 +252,7 @@ public class AddBill extends JFrame {
 			if (ex.getMessage().contains("Duplicate entry")) {
 				message_lbl.setForeground(Color.RED);
 				message_lbl.setText("");
-				message_lbl.setText("You already have a bill for " +bill_type+ " this date");
+				message_lbl.setText("You already have a bill for " +bill_type+ " on this date");
 			} else {
 				ex.printStackTrace();
 			}
