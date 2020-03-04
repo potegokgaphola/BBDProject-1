@@ -29,7 +29,6 @@ import java.awt.Font;
 public class ViewBills extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField date_Field;
 	JLabel electricity_spending;
 	JLabel food_spending;
 	JLabel water_spending;
@@ -60,7 +59,6 @@ public class ViewBills extends JFrame {
 	public ViewBills() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
-//		setResizable(false);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

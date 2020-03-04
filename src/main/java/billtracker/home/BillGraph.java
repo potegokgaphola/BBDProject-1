@@ -56,24 +56,24 @@ public class BillGraph extends JFrame {
 	}
 
 	private DefaultCategoryDataset createDataset(String startDate, String endDate, String bill_type) {
-	      DefaultCategoryDataset dataset = new DefaultCategoryDataset( );
+	      DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 	      
-		  PreparedStatement st;
-		  ResultSet rs;
+		  PreparedStatement statement;
+		  ResultSet result;
 		  String query  = "SELECT `bill_amount`, `date` FROM `bills` WHERE `date` BETWEEN ? AND ? AND `bill_type`=? ORDER BY `date` ASC";
 		  
 		  try {
-			st = My_CNX.getConnection().prepareStatement(query);
-			st.setString(1, startDate);
-			st.setString(2, endDate);
-			st.setString(3, bill_type);
+			statement = My_CNX.getConnection().prepareStatement(query);
+			statement.setString(1, startDate);
+			statement.setString(2, endDate);
+			statement.setString(3, bill_type);
 			
-			rs = st.executeQuery();
-			while (rs.next()) {
+			result = statement.executeQuery();
+			while (result.next()) {
 				
-				dataset.addValue( Double.parseDouble(rs.getString("bill_amount")) 
+				dataset.addValue( Double.parseDouble(result.getString("bill_amount")) 
 						, bill_type.toLowerCase() 
-						, rs.getString("date"));
+						, result.getString("date"));
 			}
 		} catch (SQLException ex) {
 			// TODO Auto-generated catch block

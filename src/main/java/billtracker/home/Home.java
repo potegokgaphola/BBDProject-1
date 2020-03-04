@@ -155,18 +155,6 @@ public class Home extends JFrame {
 		showGraph_btn.setBackground(Color.LIGHT_GRAY);
 		showGraph_btn.setFont(new Font("Tahoma", Font.ITALIC, 11));
 		showGraph_btn.setForeground(Color.WHITE);
-		
-		JLabel startDate_lbl = new JLabel("Start Date");
-		startDate_lbl.setForeground(Color.WHITE);
-		startDate_lbl.setFont(new Font("Tahoma", Font.ITALIC, 11));
-		startDate_lbl.setBounds(10, 27, 74, 20);
-		panel_2.add(startDate_lbl);
-		
-		JLabel endDate_lbl = new JLabel("End Date");
-		endDate_lbl.setFont(new Font("Tahoma", Font.ITALIC, 11));
-		endDate_lbl.setForeground(Color.WHITE);
-		endDate_lbl.setBounds(10, 58, 74, 20);
-		panel_2.add(endDate_lbl);
 		showGraph_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//get dates and bill type
@@ -186,12 +174,28 @@ public class Home extends JFrame {
 					SimpleDateFormat  format = new SimpleDateFormat("yyyy-MM-dd");
 					endDate = format.format(dateChooser.getDate());
 					startDate = format.format(dateChooser1.getDate());
+					dateChooser.setCalendar(null);
+					dateChooser1.setCalendar(null);
+					bgroup.clearSelection();
+					
+					BillGraph billGraph = new BillGraph(bill_type+" Graph", "Progess for " + bill_type.toLowerCase(), bill_type, startDate, endDate);
+					billGraph.pack();
+					billGraph.setVisible(true);
 				}
 				
-				BillGraph billGraph = new BillGraph(bill_type+" Graph", "Progess for " + bill_type.toLowerCase(), bill_type, startDate, endDate);
-				billGraph.pack();
-				billGraph.setVisible(true);
 			}
 		});
+		
+		JLabel startDate_lbl = new JLabel("Start Date");
+		startDate_lbl.setForeground(Color.WHITE);
+		startDate_lbl.setFont(new Font("Tahoma", Font.ITALIC, 11));
+		startDate_lbl.setBounds(10, 27, 74, 20);
+		panel_2.add(startDate_lbl);
+		
+		JLabel endDate_lbl = new JLabel("End Date");
+		endDate_lbl.setFont(new Font("Tahoma", Font.ITALIC, 11));
+		endDate_lbl.setForeground(Color.WHITE);
+		endDate_lbl.setBounds(10, 58, 74, 20);
+		panel_2.add(endDate_lbl);
 	}
 }
